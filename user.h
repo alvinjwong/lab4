@@ -11,8 +11,12 @@ class User {
   std::vector<User*> friendList;
 
  public:
-  void addFriend();
-  void removeFriend(std::string userName);
+ User(std::string& userName, std::string& email);
+  void addFriend(User* user);
+  void removeFriend(std::string& userName);
   int numFriends();
-  int getFriendAt();
+  User* getFriendAt(int index);
+};
+
+#endif
   
