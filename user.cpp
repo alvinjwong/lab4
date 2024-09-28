@@ -1,6 +1,8 @@
 #include <iostream>
 #include "user.h"
 
+//i think its done
+
 User::User(std::string& uname, std::string& email) {
     this->userName = uname;
     this->email = email;

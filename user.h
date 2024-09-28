@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+//i think its done
+
 class User {
  private:
   std::string userName;
@@ -14,7 +16,7 @@ class User {
  User(std::string& uname, std::string& email);
 std::string getUserName();
 std::string getEmail();
-void setUserName(std::string uname);
+void setUserName(std::string name);
 void setEmail(std::string email);
   void addFriend(User* user);
   void removeFriend(std::string& userName);

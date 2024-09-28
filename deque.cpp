@@ -2,6 +2,8 @@
 
 #include "deque.h"
 
+//i think its done
+
 Deque::Deque() : front(500), back(499), size(0) {
   dequeList = new int[1000];
 }

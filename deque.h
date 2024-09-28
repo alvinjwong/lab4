@@ -1,6 +1,8 @@
 #ifndef deque_h
 #define deque_h
 
+//i think its done
+
 class Deque {
  private:
   int* dequeList;
