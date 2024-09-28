@@ -23,7 +23,7 @@ void User::setEmail(std::string mail) {
 }
 
 void User::addFriend(User* user) {
-    if (friendList.size() > 100) {
+    if (friendList.size() >= 100) {
         std::cout << "Your friend list is full" << std::endl;
     } else {
         friendList.push_back(user);
@@ -31,11 +31,13 @@ void User::addFriend(User* user) {
 }
 
 void User::removeFriend(std::string& userName) {
-    for (auto friend : friendList) {
-        if (friend == userName) {
-            friendList.erase(friend);
+    for (int i = 0; i < friendList.size(); i++) {
+        if (friendList[i]->getUserName() == userName) {
+            friendList.erase(friendList.begin() + i);
+            break;
         }
-    }
+    }   
+    
 }
 
 int User::numFriends() {
@@ -47,5 +49,6 @@ User* User::getFriendAt(int index) {
         return friendList[index];
     } else {
         std::cout << "The index you chose was out of range" << std::endl;
+        return nullptr;
     }
 }
