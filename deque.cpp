@@ -22,7 +22,10 @@ void Deque::push_front(int num) {
     std::cout << "This deque is full" << std::endl;
     return;
   } else {
-    front = front - 1; //this might break, come back and look at this later
+    //i think this code goes out of index, lets say the front was at like 0 or 1, it would go out of index right?
+    front = (front - 1 + 1000) % 1000; //this might break, come back and look at this later
+    //this might fix it, because once it goes above 1000, by % 1000 it should bring it back right?
+    //also using 1000 bc 1000 should be max of the deque
     dequeList[front] = num;
     size++;
   }
@@ -32,7 +35,7 @@ void Deque::push_back(int num) {
     std::cout << "This deque is full" << std::endl;
     return;
   } else {
-    back = back + 1; //this might break, come back and look at this later
+    back = (back + 1 + 1000) % 1000; //this might break, come back and look at this later
     dequeList[back] = num;
     size++;
   }
@@ -44,7 +47,7 @@ int Deque::pop_front() {
     return -1;
   } else {
     int num = dequeList[front];
-    front = front + 1;
+    front = (front + 1 + 1000) % 1000;
     size--;
     return num;
   }
@@ -56,7 +59,7 @@ int Deque::pop_back() {
     return -1;
   } else {
     int num = dequeList[back];
-    back = back - 1;
+    back = (back - 1 + 1000) % 1000;
     size--;
     return num;
   }
